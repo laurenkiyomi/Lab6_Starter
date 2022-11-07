@@ -25,12 +25,11 @@ function getRecipesFromStorage() {
   //           header. It is possible in only a single line, but should
   //           be no more than a few lines.
   const recipes = window.localStorage.getItem('recipes');
-  let res = [];
   if (recipes) {
-    res = JSON.parse(recipes);
+    return JSON.parse(recipes);
+  } else {
+    return [];
   }
-
-  return res;
 }
 
 /**
